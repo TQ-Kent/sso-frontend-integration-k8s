@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sso-frontend-sk-chen
+  name: sso-frontend-phan-quan
   labels:
     name: assignment
 spec:
@@ -10,16 +10,17 @@ spec:
   selector:
     matchLabels:
       component: sso
-      student: sk-chen
+      student: phan-quan
   template:
     metadata:
       labels:
         component: sso
-        student: sk-chen
+        student: phan-quan
     spec:
       containers:
         - name: static
-          image: ensaas/sso-frontend:v1.0.0
+          image: tqkent/sso-frontend:v1.0.3
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           resources:
